@@ -1,0 +1,73 @@
+.cuadro1{
+	width: 200px;
+	height: 200px;
+	background: red;
+	margin-top: 150px;
+	margin-left: 150px;
+}
+.cuadro2{
+	width: 200px;
+	height: 200px;
+	background: blue;
+	margin-top: 150px;
+	margin-left: 150px;
+}
+.cuadro3{
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin-top: 150px;
+	margin-left: 150px;
+}
+.cuadro4{
+	width: 200px;
+	height: 200px;
+	background: peru;
+	margin-top: 150px;
+	margin-left: 150px;
+}
+
+/*Translate() -Traslacion */
+.cuadro1:hover{
+	/*Siguiendo el plano cartesiano xy*/
+	/*Valores posibles:
+	transform: translateX(100px);      Se mueve en el eje X 
+	transform: translateY(50px);       Se mueve en el eje Y
+	transform: translate(100px,50px);  Se mueve en el eje X,Y
+	*/
+	transform: translate(100px,50px);
+}
+
+/*Rotate() -Rotacion 
+Se maneja con angulos 50 deg,rad o grad */
+.cuadro2:hover{
+	/*Valores posibles:
+	transform: rotate(50deg);      
+	transform: rotate(50rad);       
+	transform: rotate(50grad);  
+	*/
+	transform: rotate(270grad);
+}
+
+/*Scale() -Escalas 
+Se maneja con numeros naturales y es como si 
+multiplicaramos su tamaño actual por este numero*/
+.cuadro3:hover{
+	/*Siguiendo el plano cartesiano xy*/
+	/*Valores posibles:
+	transform: scale(3);  
+	transform: scaleX(2);
+	transform: scaleY(2);	*/
+	transform: scaleY(2);
+}
+
+/*Skew() -Sesgar 
+Se maneja con angulos 50 deg,rad o grad */
+.cuadro4:hover{
+	/*Siguiendo el plano cartesiano xy*/
+	/*Valores posibles:
+	
+	*/
+	transform: skew(20grad,50grad);
+}
+

@@ -1,0 +1,57 @@
+/*Cuando queremos que despues de cierto evento, se tenga una 
+reaccion usamos, pseudo-clases las cuales realizan un movimiento
+brusco en nuestro codigo,para suavizar el movimiento,utilizamos 
+transiciones*/
+
+.cuadro1{
+	width: 200px;
+	height: 200px;
+	background: red;
+	margin: 5px;
+}
+.cuadro1:hover{
+	width: 400px;
+	height: 400px;
+	background: blue;
+}
+
+/*Con transicion se veria algo asi*/
+
+.cuadro2{
+	width: 200px;
+	height: 200px;
+	background: red;
+	margin: 5px;
+	/*Cuando no este seleccionado , regresa lentamente*/
+	transition-duration: 9s;
+}
+.cuadro2:hover{
+	width: 400px;
+	height: 400px;
+	background: blue;
+	/*Valores posibles
+	-Propiedad (width)
+	-All (Para todas las propiedades)
+	-none (sin transicion)*/
+	transition-property: width color;
+	/*Valores posibles
+	-0 (Como si no tuviera la transicion)
+	-tiempo (En s -segundo ms -milisegundos)*/
+	transition-duration: 9s;
+	/*Valores posibles
+	-0 (Como si no tuviera la transicion)
+	-tiempo (En s -segundo ms -milisegundos)*/
+	transition-delay: 5s;
+	/*Valores posibles:
+	ease           lento-rapido-lento
+	linear         normal-normal-normal
+	ease-in        lento-normal-normal
+	ease-out       normal-normal-lento
+	ease-in-out    lento-normal-lento
+	cubic-bezier   presonalizado
+	*/
+	transition-timing-function:ease; 
+	/*Atajo 
+	transition: <property> <duration> <timing-function> <delay>
+	*/
+}
