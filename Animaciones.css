@@ -1,0 +1,64 @@
+.cuadro1{
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+  margin-top: 100px;
+  background-color: red;
+  /*Nombre de la animacion*/
+  animation-name: ejemplo;
+  /*Duracion de la animacion
+  s -segundos o ms -milisegundos*/
+  animation-duration: 4s;
+  /*Veces que se repite la iteracion
+  ya sea por numero o infinite*/
+  animation-iteration-count: 3;
+  /*Estado de la animacion corriendo o pausado*/
+  animation-play-state: running;
+  /*La direccion del keyframe:
+  reverse: desde el 100% al 0%{
+  alternate: uno y uno 
+  alternate-reverse:uno y uno desde el 100% al 0%   */
+  animation-direction: alternate-reverse;
+  /*Terminacion de la animacion
+  forwards: Se queda con la ultima forma 100%
+  backwards: Se queda con la primera forma 0% 
+  */
+  animation-fill-mode: both;
+}
+@keyframes ejemplo {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+
+.cuadro2{
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+  margin-top: 100px;
+  background: green;
+  animation-name: ejemplo2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes ejemplo2{
+	from{ background: green;	}
+	to{ background: black; }
+}
+
+.cuadro3{
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+  margin-top: 100px;
+  background: purple;
+  animation-name: ejemplo3;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes ejemplo3{
+	from{ transform: rotate(50deg); }
+	to{ background: pink; }
+}
