@@ -1,0 +1,44 @@
+body{
+	background: url(fondo.jpg) ;
+	font-family: 'Hind Madurai', sans-serif;
+	letter-spacing: 1.5em;
+	color: white;
+}
+img{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	animation-name: starwars;
+	animation-duration: 4s;
+}
+p{
+	text-align: center;
+	margin:30% auto 0 auto;
+	font-size: 1.5em;
+	animation-name: force;
+	animation-duration: 4s;
+	opacity: 0;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+}
+@keyframes starwars{
+	from{
+		transform: scale(2.1);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+@keyframes force{
+	from{
+    transform: rotateY(90deg);
+	}
+	to{
+  	transform: rotateY(0);
+    opacity: 1;
+	}
+
+}
