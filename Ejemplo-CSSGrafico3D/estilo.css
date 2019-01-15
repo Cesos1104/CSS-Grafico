@@ -1,0 +1,75 @@
+/*Pasaremos a darle estilos básicos, antes de pasar a las transformaciones 3D
+
+
+Tanto el cubo, como cada cara, tendrán un ancho y alto igual:*/
+.cubo, .cubo .cara {
+    width: 200px;
+    height: 200px;
+}
+/*Cada cara tendrá una posición absoluta (para poder transformarlo con libertad)*/
+.cubo .cara {
+    position: absolute;
+}
+/*Y alinearemos también el cubo al centro para la demostracion.*/
+.cubo {
+    margin: 100px auto;
+}
+/*Fondo diferente a cada cara para notar los cambios en la transformación 3D.*/
+.cubo .cara#uno {
+    background-color: orange;
+    /*Rotar*/
+    transform: rotateX(-90deg) translateZ(-100px) ;
+    /*Lo haremos con las demas caras*/
+}
+.cubo .cara#dos {
+    background-color: red;
+    transform: translateZ(100px);
+}
+.cubo .cara#tres {
+    background-color: green;
+    transform: translateZ(-100px);
+}
+.cubo .cara#cuatro {
+    background-color: blue;
+    transform: rotateY(90deg) translateZ(100px);
+}
+.cubo .cara#cinco {
+    background-color: yellow;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.cubo .cara#seis {
+    background-color: fuchsia;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+/*Ahora ya podemos comenzar a aplicar CSS3 Transform para hacer nuestro cubo 3D.*/
+/*Ahora, antes de comenzar con el movimiento de caras para formar el cubo,
+es importante aplicarle propiedad transform-style con el valor preserve-3d al padre de nuestras caras,
+esto para mantener las transformaciones 3D de los hijos (.cara) en relación al padre (.cubo).*/
+.cubo {
+    transform-style: preserve-3d;
+}
+/*El siguiente paso será dar una transformación al .cubo para darle un poco de perspectiva
+ y facilitarnos el camino del movimiento de cara .cara*/
+ .cubo {
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateX(-30deg) rotateY(-30deg);
+}
+/*La propiedad perspective se utiliza para dar un elemento de 3D-posicionado cierta perspectiva.
+
+Define hasta qué punto el objeto está lejos del usuario. Por lo tanto, 
+un valor menor resultará en un efecto 3D más intensa que un valor más alto.*/
+
+
+/*Tiempo de mover y rotar cada una de las caras
+Rotaremos la cara de la UNO con la propiedad rotateY de transform a 90°.*/
+
+/*Gracias a la propiedad preserve-3d de transform-style aplicada al .cubo, 
+nos será posible rotar las caras con mucha facilidad. Solo hace falta realizar 
+una vuelta de 360° en X y Y con rotateX y rotateY respectivamente*/
+.cubo {
+  animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+    0% { transform: rotateX(   0deg ) rotateY(   0deg ); }
+  100% { transform: rotateX( 360deg ) rotateY( 360deg ); }
+}
